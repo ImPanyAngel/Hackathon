@@ -1,0 +1,89 @@
+.column-body {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+    height: 100vh;
+    padding-top: 10px;
+  }
+
+.header-container {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: auto;
+    background-color: rgb(235, 21, 21);
+}
+
+.header-title {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-button-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-right: 25px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    padding-left: 15px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.post-button,
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: wrap;
+    height: 25px;
+    border: none;
+
+    cursor: pointer;
+    padding: 15px 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.15s ease;
+    font-weight: bold;
+    color: white;
+}
+
+.post-button {
+    background-color: rgb(65, 135, 65);
+}
+
+.login-button {
+    background-color: rgb(120, 0, 0);
+}
+
+.post-button:hover {
+    background-color: rgb(65, 105, 65);
+}
+
+.login-button:hover {
+    background-color: rgb(100, 0, 0);
+}
+
+.post-button:active,
+.login-button:active {
+    transform: scale(95%);
+}
+
+.filter-container {
+    background-color: black;
+}
+
+.project-container {
+    background-color: blue;
+}
