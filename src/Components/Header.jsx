@@ -19,7 +19,7 @@ function Header() {
             </div>
             <div className='header-button-container'>
                 <button className='post-button' onClick={togglePopup}>+ Post</button>
-                <button className='login-button'>Login</button>
+                <a href="https://mycareers.le.ac.uk/unauth/student/login" target="_blank" rel="noopener noreferrer"><button className='login-button'>Login</button></a>
             </div>
 
             {isPopupVisible && (

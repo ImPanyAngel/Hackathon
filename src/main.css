@@ -262,3 +262,9 @@ img {
     transition: all 0.15s ease;
     cursor: pointer;
 }
+
+a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Makes the link color inherit from the parent element */
+    cursor: inherit; /* Optional: Removes the pointer cursor, making it appear like normal text */
+  }
