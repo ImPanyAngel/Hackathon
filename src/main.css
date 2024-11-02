@@ -48,7 +48,6 @@
     width: wrap;
     height: 25px;
     border: none;
-
     cursor: pointer;
     padding: 15px 10px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
@@ -80,14 +79,83 @@
 
 .filter-container {
     display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center content horizontally */
+    background-color: antiquewhite;
+}
+
+.search-container {
+    display: inline-flex;
     justify-content: center;
+    margin-top: 25px;
 }
 
 .search-input {
-    width: 75%;
     height: 25px;
+    border: none;
+    background-color: rgb(235, 21, 21);
+    color: white;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    caret-color: white;
+    padding: 10px;
+
+}
+
+.search-button {
+    height: 45px;
+    width: 15px;
+    background-color: rgb(235, 21, 21);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.search-button-img {
+    height: 15px;
+    width: 15px;
+    padding: 10px;
+    transition: all 0.15s ease;
+}
+
+.search-button:active .search-button-img {
+    transform: scale(95%);
+}
+
+.courses-container,
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: left;
+    margin-top: 15px;
+    padding-left: 45px;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(235, 21, 21);
 }
 
 .project-container {
     background-color: blue;
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    gap: 3px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
