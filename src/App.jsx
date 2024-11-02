@@ -5,7 +5,7 @@ import ProjectColumn from "./Components/ProjectColumn";
 function App() {
 
   return (
-    <div className="main-body">
+    <div className="website-body">
         <Header />
         <div className="column-body">
             <FilterColumn />
