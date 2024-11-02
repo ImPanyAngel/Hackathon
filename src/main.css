@@ -159,3 +159,32 @@
     align-items: center;
     justify-content: space-between;
 }
+
+/*Main Section*/
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.main-body {
+    display: flex;
+}
+
+.first-panel {
+    justify-content: center;
+    gap:52px;
+    padding: 20px;
+    border: 1px solid #eee;
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.info {
+    max-width:200px
+}
+
+.second-panel {
+
+}
