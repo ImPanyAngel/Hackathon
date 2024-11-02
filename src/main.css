@@ -1,6 +1,6 @@
 .column-body {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 0.75fr 2.25fr;
     gap: 16px;
     height: 100vh;
     padding-top: 10px;
@@ -79,7 +79,13 @@
 }
 
 .filter-container {
-    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 75%;
+    height: 25px;
 }
 
 .project-container {
