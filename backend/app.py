@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 def get_db_connection():
     try:
-        conn = sqlite3.connect(r'C:\Users\rahul\OneDrive\Desktop\Hackathon\data\Sqlite3.db')
+        conn = sqlite3.connect(r'Sqlite3.db')
         conn.row_factory = sqlite3.Row
         return conn
     except sqlite3.Error as error:
@@ -18,7 +18,7 @@ def getPosts():
     conn = get_db_connection()
     if conn is None:
         return jsonify({"error": "Database connection failed"}), 500
-    
+
     try:
         cursor = conn.cursor()
         posts = [dict(row) for row in cursor.execute("SELECT * FROM posts")]
@@ -36,7 +36,7 @@ def getCourse():
     conn = get_db_connection()
     if conn is None:
         return jsonify({"error": "Database connection failed"}), 500
-    
+
     try:
         cursor = conn.cursor()
         posts = [dict(row) for row in cursor.execute("SELECT DISTINCT course FROM posts")]
@@ -55,7 +55,7 @@ def getSkills():
     conn = get_db_connection()
     if conn is None:
         return jsonify({"error": "Database connection failed"}), 500
-    
+
     try:
         cursor = conn.cursor()
         posts = [dict(row) for row in cursor.execute("SELECT DISTINCT skills FROM posts")]
