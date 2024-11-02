@@ -1,4 +1,5 @@
 import logo from '../assets/logo.png';
+import title from '../assets/CojectLogo.png';
 
 function Header() {
 
@@ -6,7 +7,7 @@ function Header() {
         <div className="header-container">
             <div className="header-title">
                 <img className="logo" src={logo} alt='logo'/>
-                <p className="title">Project Finder</p>
+                <img className='title' src={title} alt='title' />
             </div>
             <div className='header-button-container'>
                 <button className='post-button'>+ Post</button>
