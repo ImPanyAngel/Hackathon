@@ -68,7 +68,7 @@ function ProjectColumn() {
             </div>
             <div className='project-section'>
                 {sortedPosts.map((post) => (
-                    <Project key={post.post_ID} course={post.course} date_uploaded={post.date_uploaded} post_description={post.post_description} skills={post.skills} student={post.student}/>
+                    <Project key={post.post_ID} course={post.course} date_uploaded={post.date_uploaded} post_description={post.post_description} skills={post.skills} student={post.email}/>
                 ))}
             </div>
         </div>
