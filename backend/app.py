@@ -48,7 +48,7 @@ def getPosts():
     
     try:
         cursor = conn.cursor()
-        posts = [dict(row) for row in cursor.execute("SELECT * FROM posts")]
+        posts = [dict(row) for row in cursor.execute("SELECT posts.*, s.email FROM posts JOIN students s ON posts.student = s.student_ID")]
         return jsonify(posts)
 
     except sqlite3.Error as error:
