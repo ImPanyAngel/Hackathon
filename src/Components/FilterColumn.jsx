@@ -4,7 +4,20 @@ import searchIcon from '../assets/search-icon.png';
 function FilterColumn() {
   const [courses, setCourses] = useState([]);
   const [skills, setSkills] = useState([]);
+  const [selectedCourses, setSelectedCourses] = useState([]);
+  const [selectedSkills, setSelectedSkills] = useState([]);
 
+  const handleSkillChange = (event) => {
+    const skill = event.target.value;
+    setSelectedSkills((prevSelectedSkills) =>
+      event.target.checked ? [...prevSelectedSkills, skill] :prevSelectedSkills.filter((s) => s !==skill))
+  }
+
+  const handleCourseChange = (event) => {
+    const course = event.target.value;
+    setSelectedCourses((prevSelectedCourses) =>
+      event.target.checked ? [...prevSelectedCourses, course] :prevSelectedCourses.filter((c) => c !==course))
+  }
   useEffect(() => {
     // Fetch courses data
     fetch("http://127.0.0.1:5000/getCourse")
@@ -50,7 +63,7 @@ function FilterColumn() {
           {courses.map((course, index) => (
             <label key={index} className="checkbox-item">
               {course.course}
-              <input type="checkbox" value={course.course} />
+              <input type="checkbox" value={course.course} checked= {selectedCourses.includes(course.course)} onChange={handleCourseChange} />
             </label>
           ))}
         </div>
@@ -61,7 +74,7 @@ function FilterColumn() {
           {skills.map((skill, index) => (
             <label key={index} className="checkbox-item">
               {skill}
-              <input type="checkbox" value={skill} />
+              <input type="checkbox" value={skill} checked={selectedSkills.includes(skill)} onChange={handleSkillChange}/>
             </label>
           ))}
         </div>
@@ -71,3 +84,6 @@ function FilterColumn() {
 }
 
 export default FilterColumn;
+
+var checkedValue = document.querySelector('.messageCheckbox:checked').value;
+
