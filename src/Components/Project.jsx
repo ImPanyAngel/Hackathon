@@ -7,7 +7,7 @@ function Project({ course, date_uploaded, post_description, skills, student }) {
             <p><strong>Date Uploaded:</strong> {date_uploaded}</p>
             <p><strong>Post Description:</strong> {post_description}</p>
             <p><strong>Skills:</strong> {skills}</p>
-            <p><strong>Students Enrolled:</strong> {student}</p>
+            <p><strong>Student Email:</strong> {student}</p>
             <button>Email</button>
         </div>
     );
