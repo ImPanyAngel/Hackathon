@@ -81,8 +81,8 @@ function ProjectColumn() {
                     </select>
                 </div>
             </div>
+            <p className="project-section-title"> Recommendations</p>
             <div className='recommendation-section'>
-                <p className="project-section-title"> Recommendations</p>
                 {recommendations.map((recommendation) => (
                     <div key={recommendation.post_ID} className='recommendation'>
                         <h3>{recommendation.course}</h3>
@@ -92,8 +92,8 @@ function ProjectColumn() {
                     </div>
                 ))}
             </div>
+            <p className="project-section-title"> More Projects </p>
             <div className='project-section'>
-                <p className="project-section-title"> More Projects </p>
                 {sortedPosts.map((post) => (
                     <Project key={post.post_ID} course={post.course} date_uploaded={post.date_uploaded} post_description={post.post_description} skills={post.skills} student={post.email}/>
                 ))}
