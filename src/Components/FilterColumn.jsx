@@ -18,6 +18,7 @@ function FilterColumn() {
     setSelectedCourses((prevSelectedCourses) =>
       event.target.checked ? [...prevSelectedCourses, course] :prevSelectedCourses.filter((c) => c !==course))
   }
+
   useEffect(() => {
     // Fetch courses data
     fetch("http://127.0.0.1:5000/getCourse")
@@ -84,6 +85,3 @@ function FilterColumn() {
 }
 
 export default FilterColumn;
-
-var checkedValue = document.querySelector('.messageCheckbox:checked').value;
-
