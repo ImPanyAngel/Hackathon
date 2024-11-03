@@ -339,3 +339,16 @@ a {
     flex-direction: column;
     gap: 5px;
 }
+
+.recommendation-section {
+    width: 100%;
+    display: inline-flex;
+    gap:10px;
+}
+
+.recommendation {
+    border: 1px solid black;
+    
+}
+    
+    
