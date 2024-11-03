@@ -8,7 +8,8 @@ function Project({ course, date_uploaded, post_description, skills, student }) {
             <p><strong>Post Description:</strong> {post_description}</p>
             <p><strong>Skills:</strong> {skills}</p>
             <p><strong>Student Email:</strong> {student}</p>
-            <button>Email</button>
+            <button> Email </button>
+            <button> Add Project to Shortlist </button>
         </div>
     );
 }
