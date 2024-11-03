@@ -47,8 +47,6 @@ function MainSection() {
                 <button>Project Description</button>
                 <button>Add to your project-list</button>
             </div>
-            <div className="third-panel">
-        </div>
         </div>
         </div>
         </div>
