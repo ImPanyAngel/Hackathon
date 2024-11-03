@@ -10,11 +10,11 @@ CORS(app)
 
 
  #product
-with open(r"C:\Users\rahul\OneDrive\Desktop\last\Hackathon\backend\postList.pkl","rb") as f:
+with open(r"postList.pkl","rb") as f:
     prod = pickle.load(f)
     df =pd.DataFrame(prod)
 
-with open(r"C:\Users\rahul\OneDrive\Desktop\last\Hackathon\backend\similarity.pkl","rb") as f:
+with open(r"similarity.pkl","rb") as f:
     similarity_mat= pickle.load(f)
 
 
@@ -32,20 +32,20 @@ def post_recommend(course):
 
 def get_db_connection():
     try:
-        conn = sqlite3.connect(r'C:\Users\rahul\OneDrive\Desktop\Hackathon\data\Sqlite3.db')
+        conn = sqlite3.connect(r'Sqlite3.db')
         conn.row_factory = sqlite3.Row
         return conn
     except sqlite3.Error as error:
         print("Database connection error:", error)
         return None
-    
+
 
 @app.route('/getPosts', methods=['GET'])
 def getPosts():
     conn = get_db_connection()
     if conn is None:
         return jsonify({"error": "Database connection failed"}), 500
-    
+
     try:
         cursor = conn.cursor()
         posts = [dict(row) for row in cursor.execute("SELECT posts.*, s.email FROM posts JOIN students s ON posts.student = s.student_ID")]
@@ -65,7 +65,7 @@ def getCourse():
     conn = get_db_connection()
     if conn is None:
         return jsonify({"error": "Database connection failed"}), 500
-    
+
     try:
         cursor = conn.cursor()
         posts = [dict(row) for row in cursor.execute("SELECT DISTINCT course FROM posts")]
@@ -84,7 +84,7 @@ def getSkills():
     conn = get_db_connection()
     if conn is None:
         return jsonify({"error": "Database connection failed"}), 500
-    
+
     try:
         cursor = conn.cursor()
         posts = [dict(row) for row in cursor.execute("SELECT DISTINCT skills FROM posts")]
@@ -102,9 +102,9 @@ def getSkills():
 def getRecommendations():
     course = request.args.get('course', default="Biology")
     recommendations = post_recommend(course)
-    
+
     if recommendations is None:
         return jsonify({"error": "Course not found"}), 404
-    
-    
+
+
     return jsonify(recommendations.to_dict(orient="records"))
