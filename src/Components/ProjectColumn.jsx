@@ -1,12 +1,27 @@
 import { useState, useEffect } from 'react';
 import Project from './Project';
 
-import sectionImage from '../assets/RedBlockUoLlogo.jpg';
+import sectionImage1 from '../assets/sectionImage1.jpg';
+import sectionImage2 from '../assets/sectionImage2.jpg';
+import sectionImage3 from '../assets/sectionImage3.jpg';
+import sectionImage4 from '../assets/sectionImage4.jpg';
 
 function ProjectColumn() {
     const [selectedOption, setSelectedOption] = useState('default');
     const [posts, setPosts] = useState([]);
     const [sortedPosts, setSortedPosts] = useState([]);
+    const [imageIndex, setImageIndex] = useState(0);
+
+    const images = [sectionImage1, sectionImage2, sectionImage3, sectionImage4];
+
+    // Cycle through images every 5 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 5000); // Change image every 5 seconds
+
+        return () => clearInterval(interval); // Clear interval on component unmount
+    }, [images.length]);
 
     useEffect(() => {
         fetch("http://127.0.0.1:5000/getPosts")
@@ -31,11 +46,10 @@ function ProjectColumn() {
         setSortedPosts(sortedData);
     }, [selectedOption, posts]);
 
-
-    return(
+    return (
         <div className="project-container">
             <div className="image-container">
-                <img src={sectionImage} alt='image' />
+                <img src={images[imageIndex]} alt="Section" />
             </div>
             <div className='information-section'>
                 <p className='projects-text'>All Projects</p>
