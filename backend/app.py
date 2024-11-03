@@ -22,7 +22,7 @@ with open(r"similarity.pkl","rb") as f:
 def post_recommend(course):
     postIndex  = df[df['course']=='Biology'].index[0]
     distances_ = similarity_mat[postIndex]
-    post_list = sorted(list(enumerate(distances_)),reverse=True,key=lambda x:x[1])[1:10]
+    post_list = sorted(list(enumerate(distances_)),reverse=True,key=lambda x:x[1])[1:4]
     recommended_df = df.iloc[[i[0] for i in post_list]]
     return recommended_df
 
